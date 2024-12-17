@@ -1,3 +1,71 @@
-components: []
+components:
+- components:
+  - data_bindings:
+    - {code: 'self.item[''imageLeft'']', property: source, writeback: false}
+    event_bindings: {mouse_enter: imageLeft_mouse_enter, mouse_leave: imageLeft_mouse_leave}
+    layout_properties: {}
+    name: imageLeft
+    properties: {height: 164.87109375, source: ''}
+    type: Image
+  - data_bindings:
+    - {code: 'self.item[''nameLeft'']', property: text, writeback: false}
+    layout_properties: {}
+    name: nameLeft
+    properties: {align: center, bold: false, font_size: 16}
+    type: Label
+  - data_bindings:
+    - {code: 'self.item[''descriptionLeft'']', property: text, writeback: false}
+    layout_properties: {}
+    name: descriptionleft
+    properties: {align: center, background: white, visible: false}
+    type: Label
+  layout_properties: {grid_position: 'IGMTOR,SDHFTL'}
+  name: panelLeft
+  properties: {}
+  type: LinearPanel
+- components:
+  - data_bindings:
+    - {code: 'self.item[''imageCenter'']', property: source, writeback: false}
+    name: imageCenter
+    properties: {height: 164.87109375}
+    type: Image
+  - data_bindings:
+    - {code: 'self.item[''nameCenter'']', property: text, writeback: false}
+    layout_properties: {}
+    name: nameCenter
+    properties: {align: center, bold: false, font_size: 16}
+    type: Label
+  - data_bindings:
+    - {code: 'self.item[''descriptionCenter'']', property: text, writeback: false}
+    layout_properties: {}
+    name: descriptionCenter
+    properties: {align: center, background: white, visible: false}
+    type: Label
+  layout_properties: {grid_position: 'IGMTOR,BJKCDW'}
+  name: panelCenter
+  properties: {}
+  type: LinearPanel
+- components:
+  - data_bindings:
+    - {code: 'self.item[''imageRight'']', property: source, writeback: false}
+    name: imageRight
+    properties: {height: 164.87109375}
+    type: Image
+  - data_bindings:
+    - {code: 'self.item[''nameRight'']', property: text, writeback: false}
+    layout_properties: {}
+    name: nameRight
+    properties: {align: center, bold: false, font_size: 17}
+    type: Label
+  - data_bindings:
+    - {code: 'self.item[''descriptionRight'']', property: text, writeback: false}
+    layout_properties: {}
+    name: descriptionRight
+    properties: {align: center, background: white, visible: false}
+    type: Label
+  layout_properties: {grid_position: 'IGMTOR,YKTUKF'}
+  name: panelRight
+  properties: {}
+  type: LinearPanel
 container: {type: ColumnPanel}
 is_package: true

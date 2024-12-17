@@ -1,4 +1,19 @@
 allow_embedding: false
+db_schema:
+  test:
+    client: search
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: image
+      type: media
+    - admin_ui: {order: 2, width: 200}
+      name: description
+      type: string
+    server: full
+    title: test
 dependencies:
 - dep_id: dep_tsa6rvpymn758p
   resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
