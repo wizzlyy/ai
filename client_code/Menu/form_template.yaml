@@ -1,0 +1,13 @@
+components:
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: default}
+  name: repeating_panel_1
+  properties: {item_template: Menu.MenuRow}
+  type: RepeatingPanel
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true
