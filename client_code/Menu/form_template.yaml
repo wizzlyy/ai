@@ -1,5 +1,6 @@
 components:
-- layout_properties: {slot: nav-right}
+- components: []
+  layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel
@@ -7,6 +8,10 @@ components:
   name: repeating_panel_1
   properties: {item_template: Menu.MenuRow}
   type: RepeatingPanel
+- layout_properties: {slot: title}
+  name: label_1
+  properties: {}
+  type: Label
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
