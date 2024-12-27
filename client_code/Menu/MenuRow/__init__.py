@@ -1,5 +1,9 @@
 from ._anvil_designer import MenuRowTemplate
 from anvil import *
+import anvil.server
+import anvil.google.auth, anvil.google.drive
+from anvil.google.drive import app_files
+import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -47,5 +51,21 @@ class MenuRow(MenuRowTemplate):
     self.descriptionRight.visible = False
 
   def imageLeft_mouse_down(self, x, y, button, keys, **event_args):
-    """This method is called when a mouse button is pressed on this component"""
-    
+    from ..ItemPage import ItemPage
+    self.FoodRow = app_tables.food.search(name=self.item["nameLeft"])
+    self.Title = self.item["nameLeft"]
+    self.Image = self.item["imageLeft"]
+    for i in self.FoodRow:
+      for v in i:
+        if "addDesc" in v:
+          self.AddDesc = v[1]
+        if "prices" in v:
+          self.Prices = v[1]
+    #self.raise_event('x-ReadyAlert')
+    #anvil.open_form('Menu.ItemPage')
+    itemform = ItemPage(title=self.Title,
+                       image=self.Image,
+                       addDesc=self.AddDesc,
+                       prices=self.Prices)
+    #alert(content=itemform)
+    anvil.open_form(itemform)
