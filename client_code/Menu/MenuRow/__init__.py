@@ -67,5 +67,8 @@ class MenuRow(MenuRowTemplate):
                        image=self.Image,
                        addDesc=self.AddDesc,
                        prices=self.Prices)
-    #alert(content=itemform)
-    anvil.open_form(itemform)
+    alert(
+      content=itemform,
+      title="Add Article",
+      large=True,
+    )

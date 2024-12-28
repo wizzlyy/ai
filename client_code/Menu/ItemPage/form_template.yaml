@@ -1,21 +1,32 @@
 components:
 - components:
-  - data_bindings: []
+  - layout_properties: {grid_position: 'BBUSAR,KHRTOX'}
+    name: label_1
+    properties: {text: hiiii}
+    type: Label
+  - data_bindings:
+    - {code: self.title, property: text, writeback: false}
     layout_properties: {grid_position: 'KDXZLT,MNFWJQ'}
     name: titleBox
-    properties: {}
+    properties: {align: center, bold: true, font_size: 20, text: title}
     type: Label
-  - layout_properties: {grid_position: 'AOLIAY,RSNDHB'}
+  - data_bindings:
+    - {code: self.image, property: source, writeback: false}
+    layout_properties: {full_width_row: false, grid_position: 'AOLIAY,RSNDHB'}
     name: imageBox
     properties: {}
     type: Image
-  - layout_properties: {grid_position: 'HLDADL,WIWWPK'}
+  - data_bindings:
+    - {code: self.prices, property: text, writeback: false}
+    layout_properties: {grid_position: 'HLDADL,WIWWPK'}
     name: pricesBox
-    properties: {}
+    properties: {align: center, font_size: 16}
     type: Label
-  - layout_properties: {grid_position: 'FGSTMN,UXYNPN'}
+  - data_bindings:
+    - {code: self.addDesc, property: text, writeback: false}
+    layout_properties: {grid_position: 'FGSTMN,UXYNPN'}
     name: addDescBox
-    properties: {}
+    properties: {align: center}
     type: Label
   layout_properties: {slot: default}
   name: content_panel
