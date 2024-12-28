@@ -52,23 +52,25 @@ class MenuRow(MenuRowTemplate):
 
   def imageLeft_mouse_down(self, x, y, button, keys, **event_args):
     from ..ItemPage import ItemPage
-    self.FoodRow = app_tables.food.search(name=self.item["nameLeft"])
+    self.FoodDetails = app_tables.menu.search(name=self.item["nameLeft"])
     self.Title = self.item["nameLeft"]
     self.Image = self.item["imageLeft"]
-    for i in self.FoodRow:
+    self.AddImage = self.item["addImageLeft"]
+    
+    for i in self.FoodDetails:
       for v in i:
         if "addDesc" in v:
           self.AddDesc = v[1]
         if "prices" in v:
           self.Prices = v[1]
-    #self.raise_event('x-ReadyAlert')
-    #anvil.open_form('Menu.ItemPage')
+          
     itemform = ItemPage(title=self.Title,
                        image=self.Image,
                        addDesc=self.AddDesc,
-                       prices=self.Prices)
+                       prices=self.Prices,
+                       addImage = self.AddImage)
     alert(
       content=itemform,
-      title="Add Article",
+      title="Food Item",
       large=True,
     )

@@ -1,56 +1,62 @@
 allow_embedding: false
 db_schema:
-  food:
+  menu:
     client: search
     columns:
-    - admin_ui: {order: 0, width: 200}
+    - admin_ui: {width: 200}
       name: name
       type: string
-    - admin_ui: {order: 1, width: 200}
-      name: image
+    - admin_ui: {order: 5, width: 200}
+      name: mainImage
       type: media
-    - admin_ui: {order: 2, width: 200}
+    - admin_ui: {width: 200}
       name: briefDesc
       type: string
-    - admin_ui: {order: 3, width: 200}
+    - admin_ui: {width: 200}
       name: addDesc
       type: string
-    - admin_ui: {order: 4, width: 200}
+    - admin_ui: {width: 200}
       name: prices
       type: string
+    - admin_ui: {order: 6, width: 200}
+      name: addImage1
+      type: media
+    - admin_ui: {order: 7, width: 200}
+      name: addImage2
+      type: media
     server: full
-    title: Food
+    title: Menu
   users:
     client: none
     columns:
-    - admin_ui: {order: 0, width: 200}
+    - admin_ui: {width: 200}
       name: email
       type: string
-    - admin_ui: {order: 1, width: 200}
+    - admin_ui: {width: 200}
       name: enabled
       type: bool
-    - admin_ui: {order: 2, width: 200}
+    - admin_ui: {width: 200}
       name: last_login
       type: datetime
-    - admin_ui: {order: 3, width: 200}
+    - admin_ui: {width: 200}
       name: password_hash
       type: string
-    - admin_ui: {order: 4, width: 200}
+    - admin_ui: {width: 200}
       name: n_password_failures
       type: number
-    - admin_ui: {order: 5, width: 200}
+    - admin_ui: {width: 200}
       name: confirmed_email
       type: bool
-    - admin_ui: {order: 6, width: 200}
+    - admin_ui: {width: 200}
       name: remembered_logins
       type: simpleObject
-    - admin_ui: {order: 7, width: 200}
+    - admin_ui: {width: 200}
       name: mfa
       type: simpleObject
-    - admin_ui: {order: 8, width: 200}
+    - admin_ui: {width: 200}
       name: signed_up
       type: datetime
-    - admin_ui: {order: 9, width: 200}
+    - admin_ui: {width: 200}
       name: username
       type: string
     server: full
@@ -79,3 +85,4 @@ services:
   source: /runtime/services/google.yml
 startup: {module: Landing, type: form}
 startup_form: null
+uplink_visible: true

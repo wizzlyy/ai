@@ -17,16 +17,18 @@ class Menu(MenuTemplate):
     # Any code you write here will run before the form opens.
     self.menu_dict = []
     counter = 0
-    for row in app_tables.food.search():
+    for row in app_tables.menu.search():
       if counter % 3 == 0:
-        row_dict = {"nameLeft":row['name'],"imageLeft":row['image'],"descriptionLeft":row['briefDesc']}
+        row_dict = {"nameLeft":row['name'],"imageLeft":row['mainImage'],"descriptionLeft":row['briefDesc'],"addImageLeft":[row['addImage1'],row['addImage2']]}
       elif counter % 3 == 1:
         row_dict["nameCenter"] = row['name']
-        row_dict["imageCenter"] = row["image"]
+        row_dict["imageCenter"] = row['mainImage']
+        row_dict["addImageCenter"] = [row['addImage1'],row['addImage2']]
         row_dict["descriptionCenter"] = row['briefDesc']
       elif counter % 3 == 2:
         row_dict["nameRight"] = row['name']
-        row_dict["imageRight"] = row["image"]
+        row_dict["imageRight"] = row['mainImage']
+        row_dict["addImageRight"] = [row['addImage1'],row['addImage2']]
         row_dict["descriptionRight"] = row['briefDesc']
         self.menu_dict.append(row_dict)
       counter += 1
