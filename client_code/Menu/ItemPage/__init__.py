@@ -18,7 +18,7 @@ class ItemPage(ItemPageTemplate):
     self.addDesc = addDesc
     self.prices = prices
     self.addImage = addImage
-    
+    self.quantity = 1
     self.counter = 0
     
     self.addImage.insert(0,self.image)
@@ -26,10 +26,11 @@ class ItemPage(ItemPageTemplate):
     # Any code you write here will run before the form opens.
     self.fade_in = animation.Transition(opacity=[0, 1])
     self.fade_out = reversed(self.fade_in)
-
+    
     self.imageBox.source = self.addImage[self.counter%3]
     self.counter += 1
-    
+
+    self.updateLabels()
     
     
   def imageTimer_tick(self, **event_args):
@@ -43,3 +44,26 @@ class ItemPage(ItemPageTemplate):
     self.imageBox.visible = True
     animation.animate(self.imageBox,self.fade_in, 500)
     time.sleep(0.5)
+
+  def quantityUp_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.quantity += 1
+    self.updateLabels()
+
+  def updateLabels(self):
+    self.quantityLabel.text = f"x {self.quantity}"
+    self.pricesBox.text = f"Price: {self.quantity * float(self.prices)}"
+
+  def quantityDown_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if self.quantity > 0:
+      self.quantity -= 1
+      self.updateLabels()
+
+  def backButton_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.raise_event("x-close-alert",value="0")
+
+  def addButton_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.raise_event("x-close-alert",value=self.pricesBox.text)

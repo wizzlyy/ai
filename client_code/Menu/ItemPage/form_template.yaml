@@ -5,6 +5,11 @@ components:
   name: titleBox
   properties: {align: center, bold: true, font_size: 20, text: title}
   type: Label
+- event_bindings: {click: backButton_click}
+  layout_properties: {grid_position: 'YXDFJY,ZXFXEJ'}
+  name: backButton
+  properties: {icon: 'fa:home', text: Back to menu}
+  type: Button
 - data_bindings:
   - {code: 'self.addImage[self.counter%3]', property: source, writeback: false}
   layout_properties: {grid_position: 'ZRZRWF,JVTELX'}
@@ -23,15 +28,29 @@ components:
   type: Label
 - data_bindings:
   - {code: self.prices, property: text, writeback: false}
-  layout_properties: {grid_position: 'KFFZXI,TPUMIG'}
+  layout_properties: {grid_position: 'IGKXPX,AMZODB'}
   name: pricesBox
   properties: {align: center, font_size: 16}
   type: Label
-- layout_properties: {grid_position: 'YCMKQI,QYAYNL'}
-  name: backButton
-  properties: {text: Back to menu}
+- layout_properties: {grid_position: 'IGKXPX,MIGJFV'}
+  name: quantityLabel
+  properties: {}
+  type: Label
+- event_bindings: {click: quantityUp_click}
+  layout_properties: {grid_position: 'IGKXPX,OOHGQE'}
+  name: quantityUp
+  properties: {icon: 'fa:caret-up', text: ''}
   type: Button
-- layout_properties: {grid_position: 'YCMKQI,QFQYLS'}
+- event_bindings: {click: quantityDown_click}
+  layout_properties: {grid_position: 'IGKXPX,OBRWWI'}
+  name: quantityDown
+  properties:
+    icon: fa:sort-down
+    text: |2+
+
+  type: Button
+- event_bindings: {click: addButton_click}
+  layout_properties: {grid_position: 'YCMKQI,QFQYLS'}
   name: addButton
   properties: {text: Add to order}
   type: Button
@@ -41,6 +60,6 @@ components:
   properties: {interval: 5}
   type: Timer
 container:
-  properties: {col_widths: '{"JVTELX":30,"QHUAOH":3,"VRJGJL":27}'}
+  properties: {col_widths: '{"JVTELX":30,"QHUAOH":3,"VRJGJL":27,"QFQYLS":30,"MIGJFV":10,"OOHGQE":5,"OBRWWI":5,"PKCVIG":50,"ZXFXEJ":10,"AMZODB":55}'}
   type: ColumnPanel
 is_package: true
