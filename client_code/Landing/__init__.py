@@ -24,4 +24,8 @@ class Landing(LandingTemplate):
   def MenuPageButton_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.open_form("Menu")
+
+  def OrderButton_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.open_form("Order")
     

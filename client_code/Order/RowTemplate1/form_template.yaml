@@ -2,7 +2,7 @@ components:
 - event_bindings: {click: deleteButton_click}
   layout_properties: {column: IIRUKW}
   name: deleteButton
-  properties: {icon: 'fa:trash', text: Delete}
+  properties: {icon: 'fa:trash', text: ''}
   type: Button
 - components:
   - event_bindings: {click: upQuantity_click}
