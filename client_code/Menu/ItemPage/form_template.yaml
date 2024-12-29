@@ -5,10 +5,16 @@ components:
   name: titleBox
   properties: {align: center, bold: true, font_size: 20, text: title}
   type: Label
-- layout_properties: {grid_position: 'ZRZRWF,JVTELX'}
+- data_bindings:
+  - {code: 'self.addImage[self.counter%3]', property: source, writeback: false}
+  layout_properties: {grid_position: 'ZRZRWF,JVTELX'}
   name: imageBox
   properties: {visible: true}
   type: Image
+- layout_properties: {grid_position: 'ZRZRWF,QHUAOH'}
+  name: spacer_1
+  properties: {height: 197.8671875, spacing_above: small}
+  type: Spacer
 - data_bindings:
   - {code: self.addDesc, property: text, writeback: false}
   layout_properties: {grid_position: 'ZRZRWF,VRJGJL'}
@@ -26,5 +32,7 @@ components:
   name: imageTimer
   properties: {interval: 5}
   type: Timer
-container: {type: ColumnPanel}
+container:
+  properties: {col_widths: '{"JVTELX":30,"QHUAOH":3,"VRJGJL":27}'}
+  type: ColumnPanel
 is_package: true

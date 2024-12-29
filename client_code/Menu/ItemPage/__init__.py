@@ -19,23 +19,25 @@ class ItemPage(ItemPageTemplate):
     self.prices = prices
     self.addImage = addImage
     
-    self.counter = -1
+    self.counter = 0
     
-    self.addImage.append(self.image)
+    self.addImage.insert(0,self.image)
     self.init_components(**properties)
     # Any code you write here will run before the form opens.
     self.fade_in = animation.Transition(opacity=[0, 1])
     self.fade_out = reversed(self.fade_in)
+
+    self.imageBox.source = self.addImage[self.counter%3]
+    self.counter += 1
+    
+    
     
   def imageTimer_tick(self, **event_args):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
-    self.imageBox.visible = True
-    animation.animate(self.imageBox, self.fade_in, 250)
-    time.sleep(4.49)
-    animation.animate(self.imageBox, self.fade_out, 250)
+    animation.animate(self.imageBox, self.fade_out, 500)
     time.sleep(0.5)
     self.imageBox.visible = False
-    self.counter += 1
     self.imageBox.source = self.addImage[self.counter%3]
-    
-    
+    self.counter += 1
+    self.imageBox.visible = True
+    animation.animate(self.imageBox,self.fade_in, 500)
