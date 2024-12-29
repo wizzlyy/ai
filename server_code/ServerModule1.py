@@ -22,3 +22,16 @@ import anvil.server
 def get_user_email():
   return anvil.users.get_user(allow_remembered=True)
 
+@anvil.server.callable
+def updateFoodList(food,price,quantity):
+  if app_tables.foodorder.get(Food=food) == None:
+    app_tables.foodorder.add_row(Food=food,Quantity=quantity,Price=price)
+  else:
+    app_tables.foodorder.get(Food=food).update(Price=price,Quantity=quantity)
+
+@anvil.server.callable
+def deleteFoodList(food):
+  app_tables.foodorder.get(Food=food).delete()
+
+  
+  

@@ -69,8 +69,13 @@ class MenuRow(MenuRowTemplate):
                        addDesc=self.AddDesc,
                        prices=self.Prices,
                        addImage = self.AddImage)
-    alert(
+    answer = alert(
       content=itemform,
       title="Food Item",
       large=True,
     )
+    if answer != None:
+      foodAns = answer[0]
+      quantityAns = answer[1]
+      priceAns = answer[2]
+      anvil.server.call('updateFoodList',food=foodAns,price=priceAns,quantity=quantityAns)

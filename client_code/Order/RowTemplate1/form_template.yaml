@@ -1,0 +1,21 @@
+components:
+- layout_properties: {column: IIRUKW}
+  name: deleteButton
+  properties: {icon: 'fa:trash', text: Delete}
+  type: Button
+- components:
+  - event_bindings: {click: upQuantity_click}
+    layout_properties: {}
+    name: upQuantity
+    properties: {icon: 'fa:caret-up', text: ''}
+    type: Button
+  - layout_properties: {}
+    name: downQuantity
+    properties: {icon: 'fa:caret-down', text: ''}
+    type: Button
+  layout_properties: {column: WJJOPH}
+  name: flow_panel_1
+  properties: {}
+  type: FlowPanel
+container: {type: DataRowPanel}
+is_package: true

@@ -62,8 +62,8 @@ class ItemPage(ItemPageTemplate):
 
   def backButton_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.raise_event("x-close-alert",value="0")
+    self.raise_event("x-close-alert",value=None)
 
   def addButton_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.raise_event("x-close-alert",value=self.pricesBox.text)
+    self.raise_event("x-close-alert",value=[self.title,self.quantity,self.prices])
