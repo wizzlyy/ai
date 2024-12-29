@@ -13,15 +13,10 @@ class Order(OrderTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.repeating_panel_1.set_event_handler('x-updateTotal', self.updateTotalPrice)
     
     # Any code you write here will run before the form opens.
-    self.totalPrice = 0
-    foodOrder = anvil.server.call('getFoodOrder')
-    self.repeating_panel_1.items = foodOrder
-    for i in foodOrder:
-      self.totalPrice += float(i["Price"])
-
-    self.totalLabel.text = self.totalPrice
+    self.updateTotalPrice()
 
   def HomePageButton_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -34,3 +29,12 @@ class Order(OrderTemplate):
   def MenuPageButton_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.open_form("Menu")
+
+  def updateTotalPrice(self, **event_args):
+    self.totalPrice = 0
+    foodOrder = anvil.server.call('getFoodOrder')
+    self.repeating_panel_1.items = foodOrder
+    for i in foodOrder:
+      self.totalPrice += float(i["Price"])
+
+    self.totalLabel.text = self.totalPrice
