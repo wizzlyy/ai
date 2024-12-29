@@ -27,6 +27,14 @@ components:
   name: pricesBox
   properties: {align: center, font_size: 16}
   type: Label
+- layout_properties: {grid_position: 'YCMKQI,QYAYNL'}
+  name: backButton
+  properties: {text: Back to menu}
+  type: Button
+- layout_properties: {grid_position: 'YCMKQI,QFQYLS'}
+  name: addButton
+  properties: {text: Add to order}
+  type: Button
 - event_bindings: {tick: imageTimer_tick}
   layout_properties: {grid_position: 'NTRQQY,GEWBHX'}
   name: imageTimer

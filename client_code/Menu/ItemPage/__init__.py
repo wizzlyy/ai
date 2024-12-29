@@ -39,5 +39,7 @@ class ItemPage(ItemPageTemplate):
     self.imageBox.visible = False
     self.imageBox.source = self.addImage[self.counter%3]
     self.counter += 1
+    time.sleep(0.1)
     self.imageBox.visible = True
     animation.animate(self.imageBox,self.fade_in, 500)
+    time.sleep(0.5)
