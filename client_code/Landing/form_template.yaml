@@ -9,6 +9,11 @@ components:
     name: MenuPageButton
     properties: {align: center, background: 'theme:Primary Container', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: raised, spacing_above: small, spacing_below: small, text: 'Take a look at our Menu! ', tooltip: '', underline: false, visible: true}
     type: Button
+  - event_bindings: {click: MenuPageButton_click}
+    layout_properties: {grid_position: 'CWGCCQ,UZKLBU'}
+    name: OrderButton
+    properties: {align: center, background: 'theme:Primary Container', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: raised, spacing_above: small, spacing_below: small, text: Check your Order!, tooltip: '', underline: false, visible: true}
+    type: Button
   layout_properties: {slot: default}
   name: content_panel
   properties: {}

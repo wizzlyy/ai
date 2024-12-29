@@ -1,5 +1,6 @@
 components:
-- layout_properties: {column: IIRUKW}
+- event_bindings: {click: deleteButton_click}
+  layout_properties: {column: IIRUKW}
   name: deleteButton
   properties: {icon: 'fa:trash', text: Delete}
   type: Button
@@ -9,7 +10,8 @@ components:
     name: upQuantity
     properties: {icon: 'fa:caret-up', text: ''}
     type: Button
-  - layout_properties: {}
+  - event_bindings: {click: downQuantity_click}
+    layout_properties: {}
     name: downQuantity
     properties: {icon: 'fa:caret-down', text: ''}
     type: Button
@@ -17,5 +19,23 @@ components:
   name: flow_panel_1
   properties: {}
   type: FlowPanel
+- data_bindings:
+  - {code: 'self.item[''Food'']', property: text, writeback: false}
+  layout_properties: {column: OMCAEK}
+  name: foodLabel
+  properties: {}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''Quantity'']', property: text, writeback: false}
+  layout_properties: {column: BRXXXD}
+  name: quantityLabel
+  properties: {}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''Price'']', property: text, writeback: false}
+  layout_properties: {column: MVMIQC}
+  name: priceLabel
+  properties: {}
+  type: Label
 container: {type: DataRowPanel}
 is_package: true

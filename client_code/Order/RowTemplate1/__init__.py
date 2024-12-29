@@ -20,4 +20,11 @@ class RowTemplate1(RowTemplate1Template):
     """This method is called when the button is clicked"""
     foodPrice = app_tables.menu.get(Food=self.item["Food"])['prices']
     anvil.server.call('updateFoodList',food=self.item["Food"],price=float(foodPrice)*int(self.item["Quantity"]),quantity=self.item["Quantity"])
-    
+  def downQuantity_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    foodPrice = app_tables.menu.get(Food=self.item["Food"])['prices']
+    anvil.server.call('updateFoodList',food=self.item["Food"],price=float(foodPrice)*int(self.item["Quantity"]),quantity=self.item["Quantity"])
+
+  def deleteButton_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('deleteFoodList',food=self.item["Food"])
