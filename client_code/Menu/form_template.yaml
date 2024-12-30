@@ -36,7 +36,8 @@ components:
   type: Label
 - components:
   - components:
-    - layout_properties: {width: 527.9451875}
+    - event_bindings: {pressed_enter: searchBox_pressed_enter}
+      layout_properties: {width: 709.48828125}
       name: searchBox
       properties: {}
       type: TextBox

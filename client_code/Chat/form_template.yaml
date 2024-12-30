@@ -1,8 +1,22 @@
 components:
-- components: []
+- components:
+  - layout_properties: {grid_position: 'YSIAFI,KYWWMC'}
+    name: chatPanel
+    properties: {item_template: Chat.ItemTemplate2}
+    type: RepeatingPanel
+  - event_bindings: {pressed_enter: sendBox_pressed_enter}
+    layout_properties: {grid_position: 'QRRFHC,CNMGWB'}
+    name: sendBox
+    properties: {placeholder: Let me see the Menu!}
+    type: TextBox
+  - event_bindings: {click: sendButton_click}
+    layout_properties: {grid_position: 'QRRFHC,KCWNWA'}
+    name: sendButton
+    properties: {icon: 'fa:send', text: ''}
+    type: Button
   layout_properties: {slot: default}
   name: content_panel
-  properties: {}
+  properties: {col_widths: '{"CNMGWB":55,"KCWNWA":5}'}
   type: ColumnPanel
 - layout_properties: {slot: nav-right}
   name: navbar_links

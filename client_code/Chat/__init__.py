@@ -16,3 +16,16 @@ class Chat(ChatTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def sendBox_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    if self.sendBox.text:
+      anvil.server.call('addChat',message=self.sendBox.text,sender="User")
+      self.chatPanel.items = anvil.server.call('getChat')
+
+  def sendButton_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if self.sendBox.text:
+      anvil.server.call('addChat',message=self.sendBox.text,sender="User")
+      self.chatPanel.items = anvil.server.call('getChat')
+    

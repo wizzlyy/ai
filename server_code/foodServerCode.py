@@ -44,4 +44,5 @@ def getFoodRow(food):
 
 @anvil.server.callable
 def searchMenu(searchItem):
-  return app_tables.menu.search(name=q.full_text_match(searchItem))
+  return app_tables.menu.search(q.any_of(name=q.ilike(searchItem),
+                                         category=q.ilike(searchItem)))
