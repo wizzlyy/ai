@@ -5,12 +5,12 @@ components:
     properties: {bold: true, font_size: 22, italic: false, text: 'Hello, what would you like to do today?', underline: false}
     type: Label
   - event_bindings: {click: MenuPageButton_click}
-    layout_properties: {grid_position: 'CWGCCQ,LZPMAW'}
+    layout_properties: {grid_position: 'QMRRGA,MSOTAZ'}
     name: MenuPageButton
-    properties: {align: center, background: 'theme:Primary Container', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: raised, spacing_above: small, spacing_below: small, text: 'Take a look at our Menu! ', tooltip: '', underline: false, visible: true}
+    properties: {align: center, background: 'theme:Primary Container', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: raised, spacing_above: small, spacing_below: small, text: Take a look at our Menu!, tooltip: '', underline: false, visible: true}
     type: Button
   - event_bindings: {click: OrderButton_click}
-    layout_properties: {grid_position: 'CWGCCQ,UZKLBU'}
+    layout_properties: {grid_position: 'IBEMYK,BNFWOP'}
     name: OrderButton
     properties: {align: center, background: 'theme:Primary Container', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: raised, spacing_above: small, spacing_below: small, text: Check your Order!, tooltip: '', underline: false, visible: true}
     type: Button

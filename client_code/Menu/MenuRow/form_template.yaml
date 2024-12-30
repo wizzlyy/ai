@@ -26,7 +26,7 @@ components:
 - components:
   - data_bindings:
     - {code: 'self.item[''imageCenter'']', property: source, writeback: false}
-    event_bindings: {mouse_enter: imageCenter_mouse_enter, mouse_leave: imageCenter_mouse_leave}
+    event_bindings: {mouse_down: imageCenter_mouse_down, mouse_enter: imageCenter_mouse_enter, mouse_leave: imageCenter_mouse_leave}
     layout_properties: {}
     name: imageCenter
     properties: {display_mode: zoom_to_fill, height: 164.87109375}
@@ -50,7 +50,7 @@ components:
 - components:
   - data_bindings:
     - {code: 'self.item[''imageRight'']', property: source, writeback: false}
-    event_bindings: {mouse_enter: imageRight_mouse_enter, mouse_leave: imageRight_mouse_leave}
+    event_bindings: {mouse_down: imageRight_mouse_down, mouse_enter: imageRight_mouse_enter, mouse_leave: imageRight_mouse_leave}
     layout_properties: {}
     name: imageRight
     properties: {display_mode: zoom_to_fill, height: 164.87109375}

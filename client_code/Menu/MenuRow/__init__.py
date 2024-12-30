@@ -1,5 +1,6 @@
 from ._anvil_designer import MenuRowTemplate
 from anvil import *
+import stripe.checkout
 import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -51,7 +52,6 @@ class MenuRow(MenuRowTemplate):
     self.descriptionRight.visible = False
 
   def imageLeft_mouse_down(self, x, y, button, keys, **event_args):
-    from ..ItemPage import ItemPage
     self.FoodDetails = app_tables.menu.search(name=self.item["nameLeft"])
     self.Title = self.item["nameLeft"]
     self.Image = self.item["imageLeft"]
@@ -63,7 +63,45 @@ class MenuRow(MenuRowTemplate):
           self.AddDesc = v[1]
         if "prices" in v:
           self.Prices = v[1]
-          
+    self.callOrderForm()
+
+  def imageCenter_mouse_down(self, x, y, button, keys, **event_args):
+    """This method is called when a mouse button is pressed on this component"""
+    self.FoodDetails = app_tables.menu.search(name=self.item["nameCenter"])
+    self.Title = self.item["nameCenter"]
+    self.Image = self.item["imageCenter"]
+    self.AddImage = self.item["addImageCenter"]
+    
+    for i in self.FoodDetails:
+      for v in i:
+        if "addDesc" in v:
+          self.AddDesc = v[1]
+        if "prices" in v:
+          self.Prices = v[1]
+    self.callOrderForm()
+
+  def imageRight_mouse_down(self, x, y, button, keys, **event_args):
+    """This method is called when a mouse button is pressed on this component"""
+    self.FoodDetails = app_tables.menu.search(name=self.item["nameRight"])
+    self.Title = self.item["nameRight"]
+    self.Image = self.item["imageRight"]
+    self.AddImage = self.item["addImageRight"]
+    
+    for i in self.FoodDetails:
+      for v in i:
+        if "addDesc" in v:
+          self.AddDesc = v[1]
+        if "prices" in v:
+          self.Prices = v[1]
+    self.callOrderForm()
+
+
+
+
+
+    
+  def callOrderForm(self):
+    from ..ItemPage import ItemPage
     itemform = ItemPage(title=self.Title,
                        image=self.Image,
                        addDesc=self.AddDesc,
@@ -71,11 +109,15 @@ class MenuRow(MenuRowTemplate):
                        addImage = self.AddImage)
     answer = alert(
       content=itemform,
-      title="Food Item",
+      title="Food Info",
       large=True,
+      dismissible=False
     )
-    if answer != None:
+    if answer is not None:
       foodAns = answer[0]
       quantityAns = answer[1]
-      priceAns = answer[2]
+      priceAns = str(float(answer[2])*int(quantityAns))
       anvil.server.call('updateFoodList',food=foodAns,price=priceAns,quantity=quantityAns)
+
+
+

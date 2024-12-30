@@ -1,5 +1,6 @@
 from ._anvil_designer import OrderTemplate
 from anvil import *
+import stripe.checkout
 import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -38,3 +39,7 @@ class Order(OrderTemplate):
       self.totalPrice += float(i["Price"])
 
     self.totalLabel.text = self.totalPrice
+
+  def chooseTable_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass

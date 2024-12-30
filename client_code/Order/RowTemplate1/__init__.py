@@ -1,5 +1,6 @@
 from ._anvil_designer import RowTemplate1Template
 from anvil import *
+import stripe.checkout
 import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -19,13 +20,11 @@ class RowTemplate1(RowTemplate1Template):
     self.updateRow()
   
   def upQuantity_click(self, **event_args):
-    print("click")
     foodPrice = app_tables.menu.get(name=self.item["Food"])['prices']
     anvil.server.call('updateFoodList',food=self.item["Food"],price=str(float(foodPrice)*int(self.quantity+1)),quantity=self.quantity+1)
     self.updateRow()
     self.parent.raise_event("x-updateTotal")
   def downQuantity_click(self, **event_args):
-    print("click")
     if self.item["Quantity"] > 0:
       foodPrice = app_tables.menu.get(Food=self.item["Food"])["prices"]
       anvil.server.call('updateFoodList',food=self.item["Food"],price=str(float(foodPrice)*int(self.quantity-1)),quantity=self.quantity-1)
