@@ -41,4 +41,7 @@ def getFoodOrder():
 @anvil.server.callable
 def getFoodRow(food):
   return app_tables.foodorder.get(Food=food)
-  
+
+@anvil.server.callable
+def searchMenu(searchItem):
+  return app_tables.menu.search(name=q.full_text_match(searchItem))

@@ -1,11 +1,5 @@
 components:
-- components:
-  - name: menuPanel
-    properties: {item_template: Menu.MenuRow}
-    type: RepeatingPanel
-  - name: text_box_1
-    properties: {}
-    type: TextBox
+- components: []
   layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
@@ -40,6 +34,29 @@ components:
   name: menuLabel
   properties: {text: Our Menu}
   type: Label
+- components:
+  - components:
+    - layout_properties: {width: 527.9451875}
+      name: searchBox
+      properties: {}
+      type: TextBox
+    - event_bindings: {click: searchButton_click}
+      layout_properties: {}
+      name: searchButton
+      properties: {icon: 'fa:search', text: Search}
+      type: Button
+    layout_properties: {grid_position: 'RJWLHS,RCVTNN'}
+    name: flow_panel_1
+    properties: {}
+    type: FlowPanel
+  - layout_properties: {grid_position: 'WABONJ,KJNEFH'}
+    name: menuPanel
+    properties: {item_template: Menu.MenuRow}
+    type: RepeatingPanel
+  layout_properties: {slot: default}
+  name: contentPanel
+  properties: {}
+  type: ColumnPanel
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
