@@ -1,21 +1,31 @@
 components:
-- data_bindings:
-  - {code: 'self.item[''Bot'']', property: text, writeback: false}
-  layout_properties: {grid_position: 'FEOZPG,LBGYAC'}
-  name: botLabel
-  properties: {}
-  type: Label
-- layout_properties: {grid_position: 'FEOZPG,JNLGZM'}
-  name: spacer_1
-  properties: {height: 32}
-  type: Spacer
-- data_bindings:
-  - {code: 'self.item[''User'']', property: text, writeback: false}
-  layout_properties: {grid_position: 'FEOZPG,WPWNGH'}
-  name: userLabel
-  properties: {background: ''}
-  type: Label
+- components:
+  - data_bindings:
+    - {code: '"  "+self.item[''bot'']', property: text, writeback: false}
+    name: botLabel
+    properties: {}
+    type: Label
+  layout_properties: {grid_position: 'UMZIDX,MYXMJI'}
+  name: flow_panel_1
+  properties: {align: left}
+  type: FlowPanel
+- components:
+  - data_bindings:
+    - {code: '"  "+self.item[''user'']', property: text, writeback: false}
+    layout_properties: {}
+    name: userLabel
+    properties:
+      align: right
+      background: ''
+      spacing:
+        margin: [null, 11, null, 0]
+        padding: [8, null, null, 0]
+    type: Label
+  layout_properties: {grid_position: 'UMZIDX,INRGSY'}
+  name: flow_panel_2
+  properties: {align: right}
+  type: FlowPanel
 container:
-  properties: {col_widths: '{"LBGYAC":25,"JNLGZM":10,"WPWNGH":25}'}
+  properties: {col_widths: '{}'}
   type: ColumnPanel
 is_package: true

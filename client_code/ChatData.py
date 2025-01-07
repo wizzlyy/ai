@@ -16,7 +16,7 @@ from anvil.tables import app_tables
 
 chat = []
 
-def updateChat(sender,message):
+def updChat(sender,message):
   if sender == "bot":
     chat.append({"bot":message,"user":None})
   elif sender == "user":
