@@ -23,7 +23,7 @@ import anvil.server
 def get_user_email():
   return anvil.users.get_user(allow_remembered=True)
 
-@anvil.server.callable
+"""@anvil.server.callable
 def updateFoodList(food,price,quantity):
   if app_tables.foodorder.get(Food=food) is None:
     app_tables.foodorder.add_row(Food=food,Quantity=quantity,Price=price)
@@ -40,7 +40,7 @@ def getFoodOrder():
 
 @anvil.server.callable
 def getFoodRow(food):
-  return app_tables.foodorder.get(Food=food)
+  return app_tables.foodorder.get(Food=food)"""
 
 @anvil.server.callable
 def searchMenu(searchItem):

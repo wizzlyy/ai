@@ -14,6 +14,7 @@ unique_ids:
     Order.ItemTemplate1: '1735485101664834198184054.723'
     Order.RowTemplate1: '1735485126941648490775687.7125'
   modules:
+    ChatData: '1736248875884145913993467.54398'
     OrderData: '1736246290399686545976854.6913'
   scripts: {}
   server_modules:

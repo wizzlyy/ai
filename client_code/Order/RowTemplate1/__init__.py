@@ -23,11 +23,14 @@ class RowTemplate1(RowTemplate1Template):
     #foodPrice = app_tables.menu.get(name=self.item["Food"])['prices']
     #anvil.server.call('updateFoodList',food=self.item["Food"],price=str(float(foodPrice)*int(self.quantity+1)),quantity=self.quantity+1)
     #self.updateRow()
+    foodPrice = app_tables.menu.get(name=self.item["food"])["prices"]
+    OrderData.updRow(food=self.item["food"],price=str(float(foodPrice)*int(self.quantity+1)),quantity=self.quantity+1)
+    self.updateRow()
     self.parent.raise_event("x-updateTotal")
     
   def downQuantity_click(self, **event_args):
-    if self.item["Quantity"] > 0:
-      foodPrice = app_tables.menu.get(Food=self.item["Food"])["prices"]
+    if self.item["quantity"] > 0:
+      foodPrice = app_tables.menu.get(name=self.item["food"])["prices"]
       #anvil.server.call('updateFoodList',food=self.item["Food"],price=str(float(foodPrice)*int(self.quantity-1)),quantity=self.quantity-1)
       OrderData.updRow(food=self.item["food"],price=str(float(foodPrice)*int(self.quantity-1)),quantity=self.quantity-1)
       self.updateRow()

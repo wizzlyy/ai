@@ -20,12 +20,25 @@ class Chat(ChatTemplate):
   def sendBox_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
     if self.sendBox.text:
-      anvil.server.call('addChat',message=self.sendBox.text,sender="User")
-      self.chatPanel.items = anvil.server.call('getChat')
-
+      #anvil.server.call('addChat',message=self.sendBox.text,sender="User")
+      #self.chatPanel.items = anvil.server.call('getChat')
+      
+      
   def sendButton_click(self, **event_args):
     """This method is called when the button is clicked"""
     if self.sendBox.text:
-      anvil.server.call('addChat',message=self.sendBox.text,sender="User")
-      self.chatPanel.items = anvil.server.call('getChat')
+      #anvil.server.call('addChat',message=self.sendBox.text,sender="User")
+      #self.chatPanel.items = anvil.server.call('getChat')
+
+  def HomePageButton_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form("Landing")
+
+  def MenuPageButton_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form("Menu")
+
+  def OrderButton_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form("Menu")
     

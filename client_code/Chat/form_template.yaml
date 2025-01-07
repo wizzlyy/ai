@@ -22,6 +22,29 @@ components:
   name: navbar_links
   properties: {}
   type: FlowPanel
+- components:
+  - event_bindings: {click: HomePageButton_click}
+    layout_properties: {grid_position: 'QQCBRI,KCUCTT'}
+    name: HomePageButton
+    properties:
+      icon: fa:home
+      text: |
+        Home
+    type: Button
+  - event_bindings: {click: MenuPageButton_click}
+    layout_properties: {grid_position: 'OGOXFR,JWRTDK'}
+    name: MenuPageButton
+    properties: {icon: 'fa:book', text: Menu}
+    type: Button
+  - event_bindings: {click: OrderButton_click}
+    layout_properties: {grid_position: 'UVQQUG,ZUAPTD'}
+    name: OrderButton
+    properties: {icon: 'fa:bookmark', text: Order}
+    type: Button
+  layout_properties: {slot: left-nav}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate

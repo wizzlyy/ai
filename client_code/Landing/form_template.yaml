@@ -5,19 +5,19 @@ components:
     properties: {bold: true, font_size: 22, italic: false, text: 'Hello, what would you like to do today?', underline: false}
     type: Label
   - event_bindings: {click: MenuPageButton_click}
-    layout_properties: {grid_position: 'QMRRGA,MSOTAZ'}
+    layout_properties: {grid_position: 'CKLRZA,HYIQRN'}
     name: MenuPageButton
     properties: {align: center, background: 'theme:Primary Container', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: raised, spacing_above: small, spacing_below: small, text: Take a look at our Menu!, tooltip: '', underline: false, visible: true}
     type: Button
-  - event_bindings: {click: OrderButton_click}
-    layout_properties: {grid_position: 'IBEMYK,BNFWOP'}
-    name: OrderButton
-    properties: {align: center, background: 'theme:Primary Container', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: raised, spacing_above: small, spacing_below: small, text: Check your Order!, tooltip: '', underline: false, visible: true}
-    type: Button
   - event_bindings: {click: chatButton_click}
-    layout_properties: {grid_position: 'MODPEO,TONQTP'}
+    layout_properties: {grid_position: 'CKLRZA,YKUOGL'}
     name: chatButton
     properties: {align: center, background: 'theme:Primary Container', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: raised, spacing_above: small, spacing_below: small, text: Chat with our Bot!, tooltip: '', underline: false, visible: true}
+    type: Button
+  - event_bindings: {click: OrderButton_click}
+    layout_properties: {grid_position: 'CKLRZA,TJYPIB'}
+    name: OrderButton
+    properties: {align: center, background: 'theme:Primary Container', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: raised, spacing_above: small, spacing_below: small, text: Check your Order!, tooltip: '', underline: false, visible: true}
     type: Button
   layout_properties: {slot: default}
   name: content_panel

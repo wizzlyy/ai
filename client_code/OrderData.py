@@ -14,7 +14,7 @@ from anvil.tables import app_tables
 #    Module1.say_hello()
 #
 
-order = {}
+order = []
 
 def updOrder(dict):
   global order
