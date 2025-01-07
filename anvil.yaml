@@ -25,6 +25,11 @@ db_schema:
       type: string
     server: full
     title: FoodOrder
+  foodorders:
+    client: none
+    columns: []
+    server: full
+    title: FoodOrders
   menu:
     client: search
     columns:
