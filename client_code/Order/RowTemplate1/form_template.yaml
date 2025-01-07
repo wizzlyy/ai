@@ -20,19 +20,19 @@ components:
   properties: {}
   type: FlowPanel
 - data_bindings:
-  - {code: 'self.item[''Food'']', property: text, writeback: false}
+  - {code: 'self.item[''food'']', property: text, writeback: false}
   layout_properties: {column: OMCAEK}
   name: foodLabel
   properties: {}
   type: Label
 - data_bindings:
-  - {code: 'self.item[''Quantity'']', property: text, writeback: false}
+  - {code: 'self.item[''quantity'']', property: text, writeback: false}
   layout_properties: {column: BRXXXD}
   name: quantityLabel
   properties: {}
   type: Label
 - data_bindings:
-  - {code: 'self.item[''Price'']', property: text, writeback: false}
+  - {code: 'self.item[''price'']', property: text, writeback: false}
   layout_properties: {column: MVMIQC}
   name: priceLabel
   properties: {}

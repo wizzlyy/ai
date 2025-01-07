@@ -8,7 +8,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-
+from .. import OrderData
 
 class Order(OrderTemplate):
   def __init__(self, **properties):
@@ -32,13 +32,16 @@ class Order(OrderTemplate):
     anvil.open_form("Menu")
 
   def updateTotalPrice(self, **event_args):
+    v = OrderData.getOrder()
     self.totalPrice = 0
-    foodOrder = anvil.server.call('getFoodOrder')
-    self.repeating_panel_1.items = foodOrder
-    for i in foodOrder:
-      self.totalPrice += float(i["Price"])
+    #foodOrder = anvil.server.call('getFoodOrder')
+    #self.repeating_panel_1.items = foodOrder
+    self.repeating_panel_1.items = v
+    #for i in foodOrder:
+      #self.totalPrice += float(i["Price"])
 
-    self.totalLabel.text = self.totalPrice
+    #self.totalLabel.text = self.totalPrice
+    self.totalLabel.text = OrderData.getTotalPrice()
 
   def chooseTable_click(self, **event_args):
     """This method is called when the button is clicked"""

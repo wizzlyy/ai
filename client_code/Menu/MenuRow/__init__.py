@@ -10,6 +10,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from anvil_extras import animation
 import time
+from ... import OrderData
 
 class MenuRow(MenuRowTemplate):
   def __init__(self, **properties):
@@ -117,7 +118,19 @@ class MenuRow(MenuRowTemplate):
       foodAns = answer[0]
       quantityAns = answer[1]
       priceAns = str(float(answer[2])*int(quantityAns))
-      anvil.server.call('updateFoodList',food=foodAns,price=priceAns,quantity=quantityAns)
+      #anvil.server.call('updateFoodList',food=foodAns,price=priceAns,quantity=quantityAns)
 
+      e = False
+      v = OrderData.getOrder()
+      for i in v:
+        if i["food"] == foodAns:
+          e = True
+          i["quantity"] += quantityAns
+          i["price"] += priceAns
+          
+      if e is False:
+        v.append({"food":foodAns,"quantity":quantityAns,"price":priceAns})
+      OrderData.updOrder(v)
+        
 
 
