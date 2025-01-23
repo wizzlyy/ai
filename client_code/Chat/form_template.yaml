@@ -4,10 +4,11 @@ components:
     name: chatPanel
     properties: {item_template: Chat.ItemTemplate2}
     type: RepeatingPanel
-  - event_bindings: {pressed_enter: sendBox_pressed_enter}
+  - data_bindings: []
+    event_bindings: {pressed_enter: sendBox_pressed_enter}
     layout_properties: {grid_position: 'QRRFHC,CNMGWB'}
     name: sendBox
-    properties: {placeholder: Let me see the Menu!}
+    properties: {enabled: true, placeholder: Let me see the Menu!}
     type: TextBox
   - event_bindings: {click: sendButton_click}
     layout_properties: {grid_position: 'QRRFHC,KCWNWA'}

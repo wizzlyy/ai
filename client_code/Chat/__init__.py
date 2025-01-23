@@ -19,7 +19,7 @@ class Chat(ChatTemplate):
 
   def sendBox_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
-    if self.sendBox.text and not self.sendBox.text.isspace():
+    if self.sendBox.text and not self.sendBox.text.isspace() and ChatData.chat[len(ChatData.chat)-1]["sender"] == "bot":
       #anvil.server.call('addChat',message=self.sendBox.text,sender="User")
       #self.chatPanel.items = anvil.server.call('getChat')
       ChatData.updChat(sender="user",message=self.sendBox.text)
@@ -27,7 +27,7 @@ class Chat(ChatTemplate):
       self.sendBox.text = ""
   def sendButton_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if self.sendBox.text and not self.sendBox.text.isspace():
+    if self.sendBox.text and not self.sendBox.text.isspace() and ChatData.chat[len(ChatData.chat)-1]["sender"] == "bot":
       #anvil.server.call('addChat',message=self.sendBox.text,sender="User")
       #self.chatPanel.items = anvil.server.call('getChat')
       ChatData.updChat(sender="user",message=self.sendBox.text)
