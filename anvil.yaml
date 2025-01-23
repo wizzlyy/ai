@@ -95,6 +95,10 @@ runtime_options:
   server_spec: {base: python310-minimal}
   server_version: python3-sandbox
   version: 2
+secrets:
+  new_secret:
+    type: secret
+    value: {JPFAM4BE6WOUX2SK: ''}
 services:
 - client_config: {}
   server_config: {}
@@ -108,6 +112,9 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/stripe.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/anvil/secrets.yml
 startup: {module: Landing, type: form}
 startup_form: null
 uplink_visible: true

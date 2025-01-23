@@ -21,13 +21,3 @@ import anvil.server
 #   return 42
 #
 @anvil.server.callable
-def addChat(message,sender):
-  if sender == "Bot":
-    app_tables.chathistory.add_row(Bot=message)
-  elif sender == "User":
-    app_tables.chathistory.add_row(User=message)
-
-@anvil.server.callable
-def getChat():
-  return app_tables.chathistory.search()
-
