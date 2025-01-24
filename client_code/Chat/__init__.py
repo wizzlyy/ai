@@ -22,8 +22,8 @@ class Chat(ChatTemplate):
     if self.sendBox.text and not self.sendBox.text.isspace():
       #anvil.server.call('addChat',message=self.sendBox.text,sender="User")
       #self.chatPanel.items = anvil.server.call('getChat')
-      ChatData.updChat(sender="user",message=self.sendBox.text)
       self.chatPanel.items = ChatData.getChat()
+      ChatData.updChat(sender="user",message=self.sendBox.text)
       self.sendBox.text = ""
   def sendButton_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -50,10 +50,12 @@ class Chat(ChatTemplate):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
     chatData = ChatData.getChat()
     if len(chatData) > 0:
-      if (chatData[len(chatData)-1])["bot"] is not None:
+      if (chatData[len(chatData)-1])["bot"] != "":
+        self.chatPanel.items = ChatData.getChat()
         self.sendBox.enabled = True
       else:
         self.sendBox.enabled = False
     else:
+      self.chatPanel.items = ChatData.getChat()
       self.sendBox.enabled = True
     
