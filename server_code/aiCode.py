@@ -25,13 +25,14 @@ from . import ChatData
 #
 import anvil.secrets
 
-global URL
 URL = anvil.secrets.get_secret("url")
 HEADERS = {"Content-Type": "application/json"}
 
 
 @anvil.server.callable
 def send_request(user_prompt):
+  global URL
+  global HEADERS
   prompt = f"""
 this is a restaurant chatbot.
 you are to tell me what the prompt is asking for. 
