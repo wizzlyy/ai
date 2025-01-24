@@ -1,5 +1,5 @@
 import anvil.secrets
-import anvil.stripe
+#import anvil.stripe
 import anvil.google.auth, anvil.google.drive, anvil.google.mail
 from anvil.google.drive import app_files
 import anvil.users
@@ -25,10 +25,10 @@ from . import ChatData
 #
 import anvil.secrets
 
+global URL
 URL = anvil.secrets.get_secret("url")
 HEADERS = {"Content-Type": "application/json"}
 
-global URL
 
 @anvil.server.callable
 def send_request(user_prompt):
