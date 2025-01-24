@@ -98,7 +98,7 @@ runtime_options:
 secrets:
   url:
     type: secret
-    value: {JPFAM4BE6WOUX2SK: pr69RFaHo0kd+YroN49xfZr8kZ38P7IvR0C590SYszLa+ZPpVNBw/bxI83+sJBEDth2v7EWVRvbwDn6hlE+VileUjPyncMgTGcHDTvLzFz50Jlt0Vfc81osAO5H+rk56M8J9aC6M4o5a7d1kHhfJ41YwkHOjlzK0uFRhCf8dV3a2PQHNHtE=}
+    value: {JPFAM4BE6WOUX2SK: VanKb5aSOLLf4Ww43SmDCnErIXb/Q1q8h0xaLV1r1/GcvkB1N2g5KPXHxdMOCZokI+IIFenBfrgh2YHz/cvoG0q8a46yovyYvWoE3bQr5JQwgbQfKgLCD03bNzqkjbhSoTjU/A/khzIjtRFA0zKzsVOzXc1/zcc=}
 services:
 - client_config: {}
   server_config: {}
