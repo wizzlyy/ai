@@ -20,7 +20,7 @@ import anvil.server
 #   print("Hello, " + name + "!")
 #   return 42
 #
-@anvil.server.callable
+"""@anvil.server.callable
 def addChat(message,sender):
   if sender == "Bot":
     app_tables.chathistory.add_row(Bot=message)
@@ -29,5 +29,5 @@ def addChat(message,sender):
 
 @anvil.server.callable
 def getChat():
-  return app_tables.chathistory.search()
+  return app_tables.chathistory.search()"""
 

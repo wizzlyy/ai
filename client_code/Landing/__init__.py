@@ -34,4 +34,8 @@ class Landing(LandingTemplate):
   def chatButton_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.open_form("Chat")
+
+  def recommendationsButton_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.open_form('Menu',popular = True)
     

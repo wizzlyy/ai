@@ -11,7 +11,7 @@ from anvil.tables import app_tables
 import math
 
 class Menu(MenuTemplate):
-  def __init__(self, **properties):
+  def __init__(self,foodItem = None, category = "None", popular = False, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
@@ -22,6 +22,18 @@ class Menu(MenuTemplate):
         sortList.append((row["Category"], row))
     
     self.sortDropDown.items = sortList
+
+    if popular is True:
+      self.popularityBox.checked = True
+    if foodItem is not None:
+      self.searchBox.text = foodItem
+    if category != "None":
+      if category.capitalize() in sortList:
+        self.sortDropDown.selected_value = category
+      else:
+        alert("Invalid Category")
+
+    self.searchMenuTable()
 
   # Open Forms
   def HomePageButton_click(self, **event_args):
