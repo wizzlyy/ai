@@ -102,14 +102,14 @@ class MenuRow(MenuRowTemplate):
 
     
   def callOrderForm(self):
-    from ..ItemPage import ItemPage
-    itemform = ItemPage(title=self.Title,
+    from ..FoodInfoPage import FoodInfoPage
+    foodForm = FoodInfoPage(title=self.Title,
                        image=self.Image,
                        addDesc=self.AddDesc,
                        prices=self.Prices,
                        addImage = self.AddImage)
     answer = alert(
-      content=itemform,
+      content=foodForm,
       title="Food Info",
       large=True,
       dismissible=False

@@ -17,6 +17,11 @@ class Menu(MenuTemplate):
 
     # Any code you write here will run before the form opens.
     self.organiseTable(app_tables.menu.search())
+    sortList = []
+    for row in app_tables.categories.search():
+        sortList.append((row["Category"], row))
+    
+    self.sortDropDown.items = sortList
 
   # Open Forms
   def HomePageButton_click(self, **event_args):
@@ -28,7 +33,6 @@ class Menu(MenuTemplate):
   def OrderButton_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.open_form("Order")
-
 
   def searchButton_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -65,15 +69,17 @@ class Menu(MenuTemplate):
     self.menuPanel.items = self.menu_dict
 
   def searchBox_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    searchReq = self.searchBox.text
-    if searchReq:
-      searchData = anvil.server.call('searchMenu',searchItem=searchReq)
-      self.organiseTable(searchData)
-    else:
-      searchData = app_tables.menu.search()
-      self.organiseTable(searchData)
+    self.searchMenuTable()
+  def sortDropDown_change(self, **event_args):
+    self.searchMenuTable()
+  def popularityBox_change(self, **event_args):
+    self.searchMenuTable()
         
       
-    
+  def searchMenuTable(self):
+    searchReq = self.searchBox.text
+    dropDownReq = self.sortDropDown.selected_value
+    popularityReq = self.popularityBox.checked
+    searchData = anvil.server.call('searchMenu',searchItem=searchReq,dropDownItem=dropDownReq,popularitySort=popularityReq)
+    self.organiseTable(searchData)
     
