@@ -26,7 +26,8 @@ def get_user_email():
 
 @anvil.server.callable
 def searchMenu(searchItem,dropDownItem,popularitySort = False):
-  if dropDownItem != "None":
+  print(dropDownItem)
+  if dropDownItem[0][1] != "None":
     categoryOfTable = []
     for row in app_tables.menu.search():
       categoryMenu = row[4][1]
@@ -37,14 +38,14 @@ def searchMenu(searchItem,dropDownItem,popularitySort = False):
     else:
       qtable = app_tables.menu.search()
     chosenTable = []
-    print(categoryOfTable)
     for row in qtable:
       if row in categoryOfTable:
         chosenTable.append(row)
-    print(chosenTable)
   else:
-    categoryOfTable = app_tables.menu.search()
-    chosenTable = categoryOfTable(q.any_of(name=q.ilike(searchItem),category=q.ilike(searchItem)))
+    if searchItem != "" and searchItem.isspace() is False:
+      chosenTable = app_tables.menu.search(q.any_of(name=q.ilike(searchItem)))
+    else:
+      chosenTable = app_tables.menu.search()
   
   if popularitySort:
     return chosenTable.order_by(ascending=False)
