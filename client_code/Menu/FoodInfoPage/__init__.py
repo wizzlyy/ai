@@ -1,4 +1,4 @@
-from ._anvil_designer import ItemPageTemplate
+from ._anvil_designer import FoodInfoPageTemplate
 from anvil import *
 #import stripe.checkout
 import anvil.server
@@ -11,7 +11,7 @@ from anvil.tables import app_tables
 from anvil_extras import animation
 import time
 
-class ItemPage(ItemPageTemplate):
+class FoodInfoPage(FoodInfoPageTemplate):
   def __init__(self, title, image, addDesc, prices, addImage, **properties):
     # Set Form properties and Data Bindings.
     self.title = title

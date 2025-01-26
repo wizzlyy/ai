@@ -2,7 +2,7 @@ components:
 - components:
   - components:
     - name: repeating_panel_1
-      properties: {item_template: Order.RowTemplate1}
+      properties: {item_template: Order.OrderRow}
       type: RepeatingPanel
     layout_properties: {grid_position: 'VWBHME,ADOUHN'}
     name: data_grid_1

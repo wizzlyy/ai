@@ -18,21 +18,17 @@ class Menu(MenuTemplate):
     # Any code you write here will run before the form opens.
     self.organiseTable(app_tables.menu.search())
 
+  # Open Forms
   def HomePageButton_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.open_form('Landing')
-
   def ChatPageButton_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.open_form('Chat')
-
   def OrderButton_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.open_form("Order")
 
-  def MenuPageButton_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
 
   def searchButton_click(self, **event_args):
     """This method is called when the button is clicked"""

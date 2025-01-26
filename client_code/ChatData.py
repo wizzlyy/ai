@@ -16,14 +16,15 @@ from anvil.tables import app_tables
 
 chat = []
 
+# Updates the Chat
 def updChat(sender,message):
   if sender == "bot":
     chat.append({"bot":message,"user":""})
-    
   elif sender == "user":
     chat.append({"bot":"","user":message})
     updChat("bot",anvil.server.call('send_request',message,chat))
 
+# Returns the Chat
 def getChat():
   global chat
   return chat
