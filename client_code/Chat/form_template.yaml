@@ -7,7 +7,7 @@ components:
     type: Timer
   - layout_properties: {grid_position: 'YSIAFI,KYWWMC'}
     name: chatPanel
-    properties: {item_template: Chat.ItemTemplate2}
+    properties: {item_template: Chat.ChatLine}
     type: RepeatingPanel
   - data_bindings: []
     event_bindings: {pressed_enter: sendBox_pressed_enter}
