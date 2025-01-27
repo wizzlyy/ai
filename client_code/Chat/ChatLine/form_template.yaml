@@ -2,7 +2,7 @@ components:
 - components:
   - components:
     - data_bindings:
-      - {code: 'self.item[''user'']', property: text, writeback: false}
+      - {code: 'self.item[''bot'']', property: text, writeback: false}
       layout_properties: {}
       name: botLabel
       properties:
