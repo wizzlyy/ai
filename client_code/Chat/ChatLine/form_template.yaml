@@ -1,8 +1,7 @@
 components:
 - components:
   - components:
-    - data_bindings:
-      - {code: 'self.item[''bot'']', property: text, writeback: false}
+    - data_bindings: []
       layout_properties: {}
       name: botLabel
       properties:
@@ -26,8 +25,7 @@ components:
   type: FlowPanel
 - components:
   - components:
-    - data_bindings:
-      - {code: 'self.item[''user'']', property: text, writeback: false}
+    - data_bindings: []
       layout_properties: {}
       name: userLabel
       properties:

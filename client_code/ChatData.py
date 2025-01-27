@@ -18,11 +18,13 @@ chat = []
 
 # Updates the Chat
 def updChat(sender,message):
+  global chat
   if sender == "bot":
-    chat.append({"bot":message,"user":""})
+    chat.append({"role":"assistant","content":message})
   elif sender == "user":
-    chat.append({"bot":"","user":message})
-    updChat("bot",anvil.server.call('send_request',message,chat))
+    chat.append({"role":"user","content":message})
+    response = anvil.server.call('send_request',message,chat)
+    updChat("bot",response["content"])
 
 # Returns the Chat
 def getChat():

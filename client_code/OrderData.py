@@ -15,6 +15,10 @@ from anvil.tables import app_tables
 #
 
 order = []
+reservation_count = 0
+
+def updCount(increment):
+  reservation_count = reservation_count + increment
 
 def updOrder(dict):
   global order
@@ -22,6 +26,7 @@ def updOrder(dict):
 
 def getOrder():
   global order
+  print(order)
   return order
 
 def getTotalPrice():

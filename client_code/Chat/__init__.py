@@ -47,7 +47,7 @@ class Chat(ChatTemplate):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
     chatData = ChatData.getChat()
     if len(chatData) > 0:
-      if (chatData[len(chatData)-1])["bot"] != "":
+      if (chatData[len(chatData)-1])["role"] == "assistant":
         self.chatPanel.items = ChatData.getChat()
         self.sendBox.enabled = True
       else:

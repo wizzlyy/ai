@@ -16,9 +16,11 @@ class ChatLine(ChatLineTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    if self.botLabel.text:
+    if self.item["role"] == "assistant":
+      self.botLabel.text = f"{self.item['content']}"
       self.botLinear.background = "lightgreen"
       self.botLabel.foreground = "white"
-    if self.userLabel.text:
+    if self.item["role"] == "user":
+      self.userLabel.text = self.item["content"]
       self.userLinear.background = "lightblue"
       self.userLabel.foreground = "white"
