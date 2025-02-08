@@ -1,9 +1,6 @@
 components:
-- layout_properties: {slot: default}
-  name: content_panel
-  properties: {}
-  type: ColumnPanel
-- layout_properties: {slot: nav-right}
+- components: []
+  layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel
@@ -13,6 +10,29 @@ components:
     text: |
       Payment
   type: Label
+- components:
+  - layout_properties: {grid_position: 'EFMRXQ,BOVUAV'}
+    name: label_2
+    properties: {text: 'Number of People:'}
+    type: Label
+  - layout_properties: {grid_position: 'EFMRXQ,RMASZD'}
+    name: peopleBox
+    properties: {placeholder: number of people}
+    type: TextBox
+  - layout_properties: {grid_position: 'CDUZBI,HVCNKM'}
+    name: label_3
+    properties:
+      text: |
+        Date:
+    type: Label
+  - layout_properties: {grid_position: 'CDUZBI,SJLLUO'}
+    name: datePick
+    properties: {placeholder: date to come}
+    type: DatePicker
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate

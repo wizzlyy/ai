@@ -97,6 +97,9 @@ runtime_options:
   server_version: python3-sandbox
   version: 2
 secrets:
+  secretKey:
+    type: secret
+    value: {JPFAM4BE6WOUX2SK: qUC3Isl4qyp932Zr/qixv1+m21x3xtOUtj0LOP9qqf4vo9hs7bcU6rt/09D3/82T8ugEubh8EX2FL7DuQuYvmn/Y2gxgN3d4KmsnMh7nxLc2Zcfb4s5ND0+04i58tQEhOiHGZECXu1khki4ydcPoOmqtN9cTNim92hTigDMJEHsSMeYe6cXQabgIHvd07phE3R2BVTRKVnrJiqwZLfcbTUy2hF6aKZ5ijG+ODinDvzJZSbTUyGexmtH2qLDs46auPtZQ8sWV2i33eg==}
   url:
     type: secret
     value: {JPFAM4BE6WOUX2SK: VanKb5aSOLLf4Ww43SmDCnErIXb/Q1q8h0xaLV1r1/GcvkB1N2g5KPXHxdMOCZokI+IIFenBfrgh2YHz/cvoG0q8a46yovyYvWoE3bQr5JQwgbQfKgLCD03bNzqkjbhSoTjU/A/khzIjtRFA0zKzsVOzXc1/zcc=}
@@ -111,7 +114,7 @@ services:
   server_config: {}
   source: /runtime/services/google.yml
 - client_config: {}
-  server_config: {}
+  server_config: {refresh_token: rt_RjmNhvviDTqYnKSJTV1rYUmgbyK1lnXl14ISteYHcVhCZX32, stripe_user_id: acct_1Qluw3Gz7xydJClO}
   source: /runtime/services/stripe.yml
 - client_config: {}
   server_config: {}
