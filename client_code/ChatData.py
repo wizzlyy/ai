@@ -24,7 +24,7 @@ def updChat(sender,message):
   elif sender == "user":
     chat.append({"role":"user","content":message})
     response = anvil.server.call('send_request',message,chat)
-    updChat("bot",response["content"])
+    updChat("bot",response)
 
 # Returns the Chat
 def getChat():
