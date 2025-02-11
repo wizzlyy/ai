@@ -24,4 +24,6 @@ from . import ChatData
 #   return 42
 #
 
-  
+@anvil.server.callable
+def getKey():
+  return anvil.secrets.get_secret('secretKey')
