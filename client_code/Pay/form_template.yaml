@@ -19,28 +19,43 @@ components:
     name: label_5
     properties: {text: 'Children:'}
     type: Label
-  - layout_properties: {grid_position: 'PWNVNT,WPIHQH'}
-    name: peopleBox
+  - event_bindings: {change: cBox_change}
+    layout_properties: {grid_position: 'PWNVNT,WPIHQH NFDQZK,BZDDXJ'}
+    name: cBox
     properties: {placeholder: number of people}
     type: TextBox
+  - layout_properties: {grid_position: 'PWNVNT,WPIHQH KJEUEN,XTOJHP'}
+    name: cWarning
+    properties: {font_size: 9, foreground: red}
+    type: Label
   - layout_properties: {grid_position: 'GBBJVI,LEIXHK'}
     name: label_6
     properties: {text: Student & Seniors}
     type: Label
-  - layout_properties: {grid_position: 'GBBJVI,GODARM'}
-    name: peopleBox_copy
+  - event_bindings: {change: sBox_change}
+    layout_properties: {grid_position: 'GBBJVI,GODARM RLGRFR,HUWPFV'}
+    name: sBox
     properties: {placeholder: number of people}
     type: TextBox
+  - layout_properties: {grid_position: 'GBBJVI,GODARM NGVORM,UVGGFQ'}
+    name: sWarning
+    properties: {font_size: 9, foreground: red}
+    type: Label
   - layout_properties: {grid_position: 'BHKYTX,ZNHAEV'}
     name: label_7
     properties:
       text: |
         Adults:
     type: Label
-  - layout_properties: {grid_position: 'BHKYTX,RNSSCP'}
-    name: peopleBox_copy_copy
+  - event_bindings: {change: aBox_change}
+    layout_properties: {grid_position: 'BHKYTX,RNSSCP QDCDCH,PDQGAO'}
+    name: aBox
     properties: {placeholder: number of people}
     type: TextBox
+  - layout_properties: {grid_position: 'BHKYTX,RNSSCP TBXKCD,ZOWOQC'}
+    name: aWarning
+    properties: {font_size: 10, foreground: red}
+    type: Label
   - layout_properties: {grid_position: 'RWQLMO,JVUQQZ'}
     name: label_4
     properties: {font_size: 17, text: 'Tier:'}
@@ -67,9 +82,13 @@ components:
     name: label_8
     properties: {font_size: 17, text: 'Total Cost:'}
     type: Label
-  - layout_properties: {grid_position: 'BCUIEC,IRPAHN'}
-    name: label_9
-    properties: {font_size: 17}
+  - layout_properties: {grid_position: 'BCUIEC,IRPAHN ILIOFM,HQUHTH'}
+    name: totalLabel
+    properties: {font_size: 17, text: ''}
+    type: Label
+  - layout_properties: {grid_position: 'BCUIEC,IRPAHN DDHWCW,CWXNPZ'}
+    name: tWarning
+    properties: {font_size: 9, foreground: red}
     type: Label
   - layout_properties: {grid_position: 'WTTLLN,PJQMQS'}
     name: button_1
