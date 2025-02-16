@@ -20,23 +20,39 @@ class Pay(PayTemplate):
   def cBox_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
     if not self.cBox.text.isdigit():
+      self.cWarning.visible = True
       self.cWarning.text = "Input needs to be a number"
     else:
-      self.cWarning.text = ""
+      self.cWarning.visible = False
 
   def sBox_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
     if not self.sBox.text.isdigit():
+      self.sWarning.visible = True
       self.sWarning.text = "Input needs to be a number"
     else:
-      self.sWarning.text = ""
+      self.sWarning.visible = False
 
   def aBox_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
     if not self.aBox.text.isdigit():
+      self.aWarning.visible = True
       self.aWarning.text = "Input needs to be a number"
     else:
-      self.aWarning.text = ""
+      self.aWarning.visible = False
+
+  def datePick_change(self, **event_args):
+    """This method is called when the selected date changes"""
+    pass
+
+  def hourTb_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if not self.hourTb.text.isdigit():
+      self.hWarning.visible = True
+      self.hWarning.text = "Input needs to be a number"
+    else:
+      if int(self.hourTb.text) 
+      self.aWarning.visible = False
 
     
     

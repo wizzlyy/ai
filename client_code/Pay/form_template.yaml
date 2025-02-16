@@ -74,10 +74,40 @@ components:
       text: |
         Date:
     type: Label
-  - layout_properties: {grid_position: 'CDUZBI,SJLLUO'}
+  - event_bindings: {change: datePick_change}
+    layout_properties: {grid_position: 'CDUZBI,SJLLUO'}
     name: datePick
     properties: {placeholder: date to come}
     type: DatePicker
+  - layout_properties: {grid_position: 'GCRYNC,CXRZVB'}
+    name: label_9
+    properties: {font_size: 16, text: 'Time:'}
+    type: Label
+  - event_bindings: {change: hourTb_change}
+    layout_properties: {grid_position: 'GCRYNC,CSZIVB OQANGM,DRVZBC'}
+    name: hourTb
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'GCRYNC,CSZIVB FUZNHJ,LDQFYC'}
+    name: hWarning
+    properties: {font_size: 9, foreground: red}
+    type: Label
+  - layout_properties: {grid_position: 'GCRYNC,FCVEOR'}
+    name: label_10
+    properties: {align: center, bold: true, font_size: 18, text: ':'}
+    type: Label
+  - layout_properties: {grid_position: 'GCRYNC,HKLROD YVYRYB,BNXTDI'}
+    name: minTb
+    properties: {}
+    type: TextBox
+  - layout_properties: {grid_position: 'GCRYNC,HKLROD YVYRYB,JCYZUJ'}
+    name: drop_down_1
+    properties: {}
+    type: DropDown
+  - layout_properties: {grid_position: 'GCRYNC,HKLROD CLGQSV,TIHIDO'}
+    name: mWarning
+    properties: {font_size: 9, foreground: red}
+    type: Label
   - layout_properties: {grid_position: 'BCUIEC,XKGQXT'}
     name: label_8
     properties: {font_size: 17, text: 'Total Cost:'}
@@ -96,7 +126,7 @@ components:
     type: Button
   layout_properties: {slot: default}
   name: content_panel
-  properties: {}
+  properties: {col_widths: '{"CXRZVB":25,"CSZIVB":15,"FCVEOR":4,"HKLROD":16,"BNXTDI":40,"JCYZUJ":20}'}
   type: ColumnPanel
 container:
   properties: {html: '@theme:standard-page.html'}
