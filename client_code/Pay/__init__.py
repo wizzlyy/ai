@@ -51,8 +51,40 @@ class Pay(PayTemplate):
       self.hWarning.visible = True
       self.hWarning.text = "Input needs to be a number"
     else:
-      if int(self.hourTb.text) 
-      self.aWarning.visible = False
+      if self.timeSelect.selected_value == "AM" and int(self.hourTb.text) != 11:
+        self.hWarning.visible = True
+        self.hWarning.text = "Time slot is not availible"
+      elif self.timeSelect.selected_value == "PM" and ((int(self.hourTb.text) > 9 and int(self.hourTb.text) != 12) or int(self.hourTb.text) <= 0):
+        self.hWarning.visible = True
+        self.hWarning.text = "Time slot is not availible"
+      else:
+        self.hWarning.visible = False
+
+  def minTb_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if not self.minTb.text.isdigit():
+      self.mWarning.visible = True
+      self.mWarning.text = "Input needs to be a number"
+    else:
+      if self.timeSelect.selected_value == "AM" and (int(self.minTb.text) < 30 or int(self.minTb.text) > 59):
+        self.mWarning.visible = True
+        self.mWarning.text = "Time slot is not availible"
+      elif self.timeSelect.selected_value == "PM":
+        if not self.hourTb.text.isdigit():
+          self.mWarning.visible = True
+          self.mWarning.text = "Fill in hour box first."
+        elif int(self.hourTb.text) == 9 and (int(self.minTb.text) < 0 or int(self.minTb.text) > 45):
+          self.mWarning.visible = True
+          self.mWarning.text = "Time slot is not availible"
+        elif int(self.minTb.text) < 0 or int(self.minTb.text) > 59:
+          self.mWarning.visible = True
+          self.mWarning.text = "Time slot is not availible"
+        else:
+          self.mWarning.visible = False
+      else:
+        self.mWarning.visible = False
+
+  
 
     
     
