@@ -122,14 +122,20 @@ components:
     name: tWarning
     properties: {font_size: 9, foreground: red}
     type: Label
-  - layout_properties: {grid_position: 'WTTLLN,PJQMQS'}
-    name: button_1
+  - event_bindings: {click: payButton_click}
+    layout_properties: {grid_position: 'WTTLLN,PJQMQS'}
+    name: payButton
     properties: {text: Pay with Stripe}
     type: Button
   layout_properties: {slot: default}
   name: content_panel
   properties: {col_widths: '{"CXRZVB":25,"CSZIVB":13,"FCVEOR":4,"HKLROD":18,"BNXTDI":40,"JCYZUJ":20}'}
   type: ColumnPanel
+- event_bindings: {tick: timer_1_tick}
+  layout_properties: {slot: top-left-btn}
+  name: timer_1
+  properties: {interval: 1}
+  type: Timer
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
