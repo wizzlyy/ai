@@ -1,5 +1,5 @@
 import anvil.secrets
-#import anvil.stripe
+#import stripe.checkout
 import anvil.google.auth, anvil.google.drive, anvil.google.mail
 from anvil.google.drive import app_files
 import anvil.users
@@ -27,3 +27,7 @@ from . import ChatData
 @anvil.server.callable
 def getKey():
   return anvil.secrets.get_secret('secretKey')
+
+@anvil.server.callable
+def updOrder(email,order):
+  tables.app_tables.reservations.add_row(email=email,order=order)
