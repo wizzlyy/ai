@@ -77,7 +77,7 @@ components:
   - event_bindings: {change: datePick_change}
     layout_properties: {grid_position: 'CDUZBI,SJLLUO'}
     name: datePick
-    properties: {placeholder: date to come}
+    properties: {pick_time: false, placeholder: date to come}
     type: DatePicker
   - layout_properties: {grid_position: 'GCRYNC,CXRZVB'}
     name: label_9
