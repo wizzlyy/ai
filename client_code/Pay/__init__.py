@@ -16,7 +16,12 @@ class Pay(PayTemplate):
     stripe.api_key = anvil.server.call('getKey')
     # Any code you write here will run before the form opens.
     self.totalLabel.text = "All blanks need to be filled in!"
-
+    self.cWarning.visible = False
+    self.aWarning.visible = False
+    self.sWarning.visible = False
+    self.tWarning.visible = False
+    self.hWarning.visible = False
+    self.mWarning.visible = False
   def cBox_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
     if not self.cBox.text.isdigit():
